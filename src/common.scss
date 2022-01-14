@@ -1,5 +1,49 @@
-$body-color: red;
-
 body {
-    color: $body-color;
+    margin: 0;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: #045d8b;
+
+    .navbar__logo {
+        padding: 5px 10px;
+
+        color: white;
+        font-size: 30px;
+    }
+
+    .navbar__menu {
+        // 아래 중복된거 mixin 하자
+        padding-left: 0;
+        display: flex;
+        flex-direction: row;
+
+        list-style: none;
+        font-weight: bold;
+
+        & > li {
+            padding: 5px 10px;
+        }
+    }
+
+    .navbar__icons {
+        padding-left: 0;
+        display: flex;
+        flex-direction: row;
+
+        list-style: none;
+
+        & > li {
+            padding: 5px 10px;
+        }
+    }
 }

@@ -1,21 +1,29 @@
-import _ from 'lodash';
 import './common.scss';
-import heartImage from './assets/heart.png';
-import { sum } from './math';
+import userImage from './assets/user.png';
+import categoryImage from './assets/category.png';
+import menuImage from './assets/menu.png';
 
-function component() {
-    const element = document.createElement('div');
-    const imageElement = document.createElement('img');
+function init() {
+    const root = document.getElementById('root');
+    const template = `
+        <nav class="navbar">
+            <div class="navbar__logo">
+                <strong>준혁장터</strong>
+            </div>
+            <ul class="navbar__menu">
+                <li>아라동 </li>
+                <li>노형동</li>
+                <li>천수동</li>
+                <li>광진구</li>
+            </ul>
+            <ul class="navbar__icons">
+                <li><img src=${userImage}></li>
+                <li><img src=${categoryImage}></li>
+            </ul>
+        </nav>
+    `;
 
-    /* lodash is required for the next line to work */
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.innerHTML += `Babel test => 10 + 20 = ${sum(10, 20)}`;
-
-    imageElement.src = heartImage;
-    element.appendChild(imageElement);
-
-    return element;
+    root.innerHTML = template;
 }
 
-const root = document.querySelector('#root');
-root.appendChild(component());
+init();
