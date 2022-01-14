@@ -46,4 +46,44 @@ img:hover {
             padding: 5px 10px;
         }
     }
+
+    .navbar__toggleButton {
+        display: none;
+        position: absolute;
+        top: 15px;
+        right: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        background-color: #045d8b;
+
+        .navbar__menu {
+            width: 100%;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+
+            list-style: none;
+            font-weight: bold;
+        }
+
+        .navbar__icons {
+            display: none;
+        }
+
+        .navbar__toggleButton {
+            display: block;
+        }
+
+        .navbar__menu.active,
+        .navbar__icons.active {
+            display: flex;
+        }
+    }
 }

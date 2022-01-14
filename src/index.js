@@ -20,10 +20,22 @@ function init() {
                 <li><img src=${userImage}></li>
                 <li><img src=${categoryImage}></li>
             </ul>
+            <div class="navbar__toggleButton">
+                <img src=${menuImage}>
+            </div>
         </nav>
     `;
 
     root.innerHTML = template;
+
+    const toggleBtn = root.querySelector('.navbar__toggleButton');
+    const menus = root.querySelector('.navbar__menu');
+    const icons = root.querySelector('.navbar__icons');
+
+    toggleBtn.addEventListener('click', () => {
+        menus.classList.toggle('active');
+        icons.classList.toggle('active');
+    });
 }
 
 init();
